@@ -1,0 +1,26 @@
+name: SeniorCrates
+version: 1.0
+main: me.mrxbox98.SeniorCrates.SeniorCrates
+author: Mrxbox98
+commands:
+  crate:
+    description: Main command for SeniorCrates.
+
+permissions:
+  crates.admin.create:
+    description: Allows you to create a crate.
+    default: op
+  crates.admin.delete:
+    description: Allows you to delete a crate.
+    default: op
+  crates.admin.edit:
+    description: Allows you to edit a crate.
+    default: op
+  crates.admin.give:
+    description: Allows you to give a crate.
+    default: op
+  crates.bypass:
+    description: Allows you to bypass cooldown.
+    default: op
+
+softdepend: [PlaceholderAPI]
