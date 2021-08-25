@@ -17,6 +17,9 @@ public class ItemListener implements Listener {
     public void onItemRightClick(PlayerInteractEvent event)
     {
         if(event.getAction().equals(Action.LEFT_CLICK_AIR) || event.getAction().equals(Action.LEFT_CLICK_BLOCK))
+        {
+            return;
+        }
 
         if(event.getItem()!=null)
         {
