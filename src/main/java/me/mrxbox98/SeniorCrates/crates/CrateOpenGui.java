@@ -80,13 +80,14 @@ public class CrateOpenGui implements Listener {
         inventory.clear();
 
         ItemStack reward;
-        if(crate.roll()==null)
+        CrateReward roll = crate.roll();
+        if(roll==null)
         {
             reward=new ItemStack(Material.AIR);
         }
         else
         {
-            reward=crate.roll().getReward();
+            reward=roll.getReward();
         }
 
         for(int i=0;i<(inventory.getSize()-1)/2;i++)

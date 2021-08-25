@@ -4,8 +4,10 @@ import me.mrxbox98.SeniorCrates.SeniorCrates;
 import me.mrxbox98.SeniorCrates.crates.Crate;
 import me.mrxbox98.SeniorCrates.crates.CrateOpenGui;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
@@ -14,6 +16,8 @@ public class ItemListener implements Listener {
     @EventHandler
     public void onItemRightClick(PlayerInteractEvent event)
     {
+        if(event.getAction().equals(Action.LEFT_CLICK_AIR) || event.getAction().equals(Action.LEFT_CLICK_BLOCK))
+
         if(event.getItem()!=null)
         {
             for(Crate crate: Crate.crates)
@@ -46,7 +50,7 @@ public class ItemListener implements Listener {
     {
         try
         {
-            if(event.getItemInHand().getItemMeta().getLore().get(0).contains("id:"))
+            if(event.getItemInHand().getType().equals(Material.ENDER_CHEST) && event.getItemInHand().getItemMeta().getDisplayName().contains("Crate"))
             {
                 event.setCancelled(true);
             }
