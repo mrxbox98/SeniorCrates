@@ -17,6 +17,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.Random;
 
 public class CrateOpenGui implements Listener {
@@ -113,6 +114,7 @@ public class CrateOpenGui implements Listener {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        SeniorCrates.hashMap.put(player, new Date());
                     }
                 },4*i+4);
             }
